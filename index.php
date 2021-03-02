@@ -1,6 +1,7 @@
 <?php
 
-    require_once "controllers/config/ConfigGeneral.php";
+    require_once "./config/ConfigGeneral.php";
+  
     //se inlcuye el controlador vista controlador
     require_once "./controllers/viewsController.php";
 

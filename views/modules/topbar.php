@@ -53,7 +53,8 @@
         <div class="topbar-divider d-none d-sm-block"></div>
 
         <!-- Nav Item - User Information -->
-        <?php include "views/modules/userInformation.php"; ?>
+        <?php include "views/modules/userInfomation.php"; ?>
+        
     </ul>
 </nav>
 <!-- End of Topbar -->

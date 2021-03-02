@@ -64,15 +64,15 @@
                                         </div>
                                         
                                         <div class="d-flex justify-content-center align-items-center">
-                                            <button type="submit" class="btn btn-kohaku m-3" href="index.php">Iniciar Sesión</button>
+                                            <button type="submit" class="btn btn-kohaku m-3" href="/kohaku/?page=login">Iniciar Sesión</button>
                                         </div>
                                     </form>
                                     
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.php">¿Olvidó su contraseña?</a>
+                                        <a class="small" href="/kohaku/?page=forgot-password">¿Olvidó su contraseña?</a>
                                     </div>
                                     <div class="text-center"> 
-                                        <a class="small" href="register.php">Crear Cuenta</a>
+                                        <a class="small" href="/kohaku/?page=register">Crear Cuenta</a>
                                     </div>
                                 </div>
                             </div>

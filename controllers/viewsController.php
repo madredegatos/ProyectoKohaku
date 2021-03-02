@@ -19,9 +19,8 @@
                 $route=explode("/", $_GET['page']);
                 //self :: hacer referencia a la clase heredada
                 //::ignifica acceder al método
-
                 $answer=viewsModel::get_views_model($route[0]);
-            }else{
+            } else {
                 //si la variable no está definida envía al login
                 $answer="login";
             }

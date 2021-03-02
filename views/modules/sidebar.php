@@ -25,10 +25,15 @@
             <span> Inicio</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="/kohaku/?page=admin">
+            <i class="fas fa-house-user"></i>
+            <span>Administrador</span></a>
+    </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="./class.php">
+        <a class="nav-link" href="/kohaku/?page=class">
             <i class="far fa-calendar-alt"></i>
             <span> Clases</span></a>
            

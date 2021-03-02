@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,25 +13,39 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
     <link href="./views/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/sweet-alert/sweetalert2.css">
     <!-- <link href="./views/css/kohaku.css" rel="stylesheet"> -->
      <!-- Se modifica el link con la variable SERVERURL"> -->
     <link href="<?php echo SERVERURL; ?>./views/css/kohaku.css" rel="stylesheet">
+    <link href="<?php echo SERVERURL; ?>./views/css/calendar.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
     <?php
+        //peticion ajax
+        $petitionAjax=false;
+        
         //se incluye el archivo vista controlador
         require_once "./controllers/viewsController.php";
+
+        $noTemplateViews = ["forgot-password", "register"];
+
         //se instancia la vista controlado vistas o vt
         $vt = new viewsController();
         //queremos utilizar la funcion  obtener vista controlador
         //se crea una NUEVA variala $vtA para poder hacer el iclud de la variabl en el conenido SN ERROR
         $vtA=$vt->get_views_controller();
         // si vt trae el valor del login se muestra el login
-        if($vtA=="login"):
+
+        if(in_array($vtA, $noTemplateViews)):
+            // if($vtA=="login" ||  $vtA=="404"):
+            require_once "./views/pages/".$vtA.".php";
+        elseif($vtA=="login"):
             require_once "./views/pages/login.php";
             //si no, me incluye todo el contenida de la página
         else:
+            //iniciar seión
+            session_start();
     ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -76,7 +88,6 @@
 
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
 
