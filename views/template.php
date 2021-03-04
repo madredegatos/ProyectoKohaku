@@ -45,7 +45,7 @@
             //si no, me incluye todo el contenida de la página
         else:
             //iniciar seión
-            session_start();
+            session_star(['name'=>'SK']);
     ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
