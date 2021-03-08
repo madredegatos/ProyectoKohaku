@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>KOHAKU</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./css/loginstyle.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./views/css/loginstyle.css">
 
 </head>
 <body>
@@ -70,7 +70,7 @@
 	</div>
 </div>
 <?php
-	if(isset($_POST['loginemail'])&& isset($_POST['loginpass'])){
+	if(isset($_POST['loginemail'])&& isset($_POST['loginpass'])&& $_POST['loginemail']!=""&&$_POST['loginpass']!="" ){
 		require_once"./controllers/controllerLogin.php";
 		$login = new controllerLogin();
 		echo $login->star_controller_session();
@@ -85,7 +85,7 @@
 	</p>
 </footer>
 <!-- partial -->
-  <script  src="./js/loginscript.js"></script>
+  <script  src="./views/js/loginscript.js"></script>
 
 </body>
 </html>

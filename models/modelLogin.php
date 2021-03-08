@@ -8,9 +8,11 @@
     }
     class modelLogin extends mainModel{
         protected function star_model_session($data){
-            $sql=mainModel::connect()->prepare("SELECT * FROM usuario WHERE correo_electronico=:email AND clave=:pass AND estado_usuario_id_estado_usuario=1");
+            $statu=1;
+            $sql=mainModel::connect()->prepare("SELECT * FROM usuario WHERE correo_electronico=:email AND clave=:pass AND estado_usuario_id_estado_usuario=:condition");
             $sql->bindParam(':email',$data['email']);
             $sql->bindParam(':pass',$data['pass']);
+            $sql->bindParam(':condition',$statu);
             $sql->excute();
             return $sql;
         }
