@@ -18,6 +18,7 @@
      <!-- Se modifica el link con la variable SERVERURL"> -->
     <link href="<?php echo SERVERURL; ?>./views/css/kohaku.css" rel="stylesheet">
     <link href="<?php echo SERVERURL; ?>./views/css/calendar.css" rel="stylesheet">
+    <?php include "views/modules/script.php"; ?>
 </head>
 
 <body id="page-top">
@@ -45,7 +46,7 @@
             //si no, me incluye todo el contenida de la página
         else:
             //iniciar seión
-            session_star(['name'=>'SK']);
+            @session_start(['name'=>'SK']);
     ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -104,4 +105,3 @@
 </body>
 
 <!-- Bootstrap core JavaScript-->
-<?php include "views/modules/script.php"; ?>

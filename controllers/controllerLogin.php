@@ -7,22 +7,26 @@
         require_once "./models/modelLogin.php";
     }
     class controllerLogin extends modelLogin{
+        // cuncion para iniciar sesion
         public function star_controller_session(){
+            //se limpian los espacios que se piden en login por si traian partes de cadena anterior 
+            //y luego se usa la nueva cadena en las variables
             $email=mainModel::clean_string($_POST['loginemail']);
             $pass=mainModel::clean_string($_POST['loginpass']);
-            
-            //$pass=mainModel::encryption($pass);
-
+            //se encripta la contraseña
+            $pass=mainModel::encryption($pass);
+            //se pasan los datos del login a una variable para usarlos en el modelo
             $logindata=[
                 "email"=>$email,
                 "pass"=>$pass
             ];
-
+            //se pasan los datos del login al modelo
             $userdata=modelLogin::star_model_session($logindata);
             
-            if($userdata->rowcount()==1){
+            if($userdata->rowCount()==1){
                 $userrow=$userdata->fetch();
-                session_star(['name'=>'SK']);
+
+                @session_start(['name'=>'SK']);
                 $_SESSION['firstname_sk']=$userrow['nombre'];
                 $_SESSION['lasttname_sk']=$userrow['apellido'];
                 $_SESSION['email_sk']=$userrow['correo_electronico'];
