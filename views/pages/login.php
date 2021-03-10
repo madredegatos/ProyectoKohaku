@@ -38,7 +38,7 @@
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="" method="post">
+		<form action="" method="POST" autocomplete="off">
 			<h1>Registro</h1>
 			<div class="social-container">
 				<!--<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -46,10 +46,11 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>-->
 			</div>
 			<span>Puedes ingresar con tu cuenta</span>
-			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" />
-			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass"/>
+            <!-- name="loginemail" name="loginpass" -->
+			<input type="email" placeholder="Correo electronico" id="loginemail" name="correo" />
+			<input type="password" placeholder="Contraseña" id="loginpass" name="clave"/>
 		<a href="#">Olvidaste tu contraseña?</a>
-			<button>Ingresa</button>
+			<button type="submit" value="login">Ingresa</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -88,4 +89,13 @@
   <script  src="./views/js/loginscript.js"></script>
 
 </body>
+
+<!-- Se agrega este bloque de código para iniciar la sesión -->
+<?php 
+    if(isset($_POST['correo']) && isset($_POST['clave'])){
+        require_once "./controllers/controllerLogin.php";
+        $login = new ControllerLogin();
+        echo $login->start_controller_session();
+    }
+?>
 </html>
