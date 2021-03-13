@@ -19,21 +19,21 @@
 			</div>
 			<span>Puedes usar tu correo para registrarte</span>
 			<input type="text" placeholder="Nombre" id="first_name" name= "first_name" />
-			<input type="text" placeholder="Apellido" id="lastname" name="last_name">
-			<select  name = "type_id" name = "type_id">
+			<input type="text" placeholder="Apellido" id="last_name" name="last_name">
+			<!--<select  name = "id_type" name = "id_type">
 				<option value="0" selected>tipo de documento</option>
 				<option value="1">Cedula de Ciudadadania</option>
 				<option value="2">Cedula de Extranjeria</option>
 				<option value="3">Tarjeta de Identidad</option>
-			<input type="text" placeholder="Numero de Documento" id="number_id" name="number_id"/>
+			<input type="text" placeholder="Numero de Documento" id="id_number" name="id_number"/>
 			<input type="text" placeholder="Direccion" id="direction" name="direction"/>
 			<input type="text" placeholder="Telefono Fijo" id="phone" name="phone"/>
-			<input type="text" placeholder="celular" id="celphone"name="celphone"/>
+			<input type="text" placeholder="celular" id="celphone"name="cellphone"/>-->
 			<input type="email" placeholder="Correo electronico" id="email" name="email"/>
 			<input type="password" placeholder="Contraseña" id="pass" name="pass"/>
 			<input type="password" placeholder="Confirmar contraseña" id="pass_confirm" name= "pass_confirm"/>
 
-			<button type= "submit" value ="Registro" class="btn btn-kohaku m-3" >Registrarte</button>
+			<button type= "submit" value ="Registro">Registrarte</button>
 
 		</form>
 	</div>
@@ -47,8 +47,8 @@
 			</div>
 			<span>Puedes ingresar con tu cuenta</span>
             <!-- name="loginemail" name="loginpass" -->
-			<input type="email" placeholder="Correo electronico" id="loginemail" name="correo" />
-			<input type="password" placeholder="Contraseña" id="loginpass" name="clave"/>
+			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" />
+			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass"/>
 		<a href="#">Olvidaste tu contraseña?</a>
 			<button type="submit" value="login">Ingresa</button>
 		</form>
@@ -65,16 +65,26 @@
 				<h1>Hola amigo!</h1>
 				<p>Ingrese sus datos personales y comience con nosotros</p>
 				<button class="ghost" id="signUp">Inscribirse</button>
-				
 			</div>
 		</div>
 	</div>
 </div>
 <?php
-	if(isset($_POST['loginemail'])&& isset($_POST['loginpass'])&& $_POST['loginemail']!=""&&$_POST['loginpass']!="" ){
+	if(isset($_POST['loginemail']) && isset($_POST['loginpass']) && $_POST['loginemail']!="" &&$_POST['loginpass']!="" ){
 		require_once"./controllers/controllerLogin.php";
 		$login = new controllerLogin();
 		echo $login->star_controller_session();
+	}
+	if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_confirm']) && $_POST['first_name']!="" && $_POST['last_name']!="" && $_POST['email']!="" && $_POST['pass']!="" && $_POST['pass_confirm']!="")
+	{
+		require_once"./controllers/controllerRegister.php";
+		$register = new controllerRegister();
+		echo $register->add_user_controller();
+	}
+	else{
+		require_once"./controllers/controllerRegister.php";
+		$registerFail = new controllerRegister();
+		echo $registerFail->add_user_incomplete_data();
 	}
 ?>
 <footer>
