@@ -16,7 +16,17 @@
 		
 		<!-- Area Chart -->
 		<div class="col-xl-8 col-lg-7">
-			<?php include "views/modules/calendar.php"; ?>
+			<?php
+			  $tipo_usuario_administrador=1;
+			  $tipo_usuario_alumno=3;
+			  if( $_SESSION['tipo_usuario']==$tipo_usuario_alumno){
+			      include "views/modules/selecionarClasesAlumno.php";
+			     
+			  }
+			  if( $_SESSION['tipo_usuario']==$tipo_usuario_administrador){
+			     include "views/modules/agendarClasesAdministrador.php";
+			  }
+			?>
 
 			
 		</div>
