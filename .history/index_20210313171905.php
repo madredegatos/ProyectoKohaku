@@ -3,8 +3,7 @@
     require_once "./config/ConfigGeneral.php";
   
     //se inlcuye el controlador vista controlador
-    require_once "./controllers/viewsController.php";
-    //Hola
+    require_once "./controllers/viewsController.php"</h1>
     //Se instancia la clase vista controlador en una variable
     $template = new viewsController();
     //llamamos la función de la clase vistas contolador

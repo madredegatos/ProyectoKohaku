@@ -4,7 +4,7 @@
   
     //se inlcuye el controlador vista controlador
     require_once "./controllers/viewsController.php";
-    //Hola
+<h1>HOLAAAAAA </h1>
     //Se instancia la clase vista controlador en una variable
     $template = new viewsController();
     //llamamos la función de la clase vistas contolador
