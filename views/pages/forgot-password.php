@@ -49,7 +49,7 @@
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Introducir la direción de correo...">
                                         </div>
-                                        <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                        <a href="index.php" class="btn btn-primary btn-user btn-block">
                                             Restablecer contraseña
                                         </a>
                                     </form>
