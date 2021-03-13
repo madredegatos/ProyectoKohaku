@@ -82,7 +82,7 @@ $base_url='vendor/calendario/';
   </thead>
   <tbody>
    <?php
-   $idUsuarioSesion=$_SESSION['id'];
+   $idUsuarioSesion=$_SESSION['userid_sk'];
        $sql="select c.titulo,c.inicio_normal,c.final_normal, u.nombre, c.id from clase c 
              inner join usuario u on u.id_usuario=c.id_instructor 
              where c.id not in(select uc.clases_id_clases from usuario_has_clase uc where uc.usuario_id_usuario=".$idUsuarioSesion.");";
@@ -130,7 +130,7 @@ $base_url='vendor/calendario/';
                         modal_type:'iframe',    
 
                         //obtenemos los agenda de la base de datos
-                        events_source: 'models/obtener_eventos_alumno.php?id_user='+<?=$_SESSION['id']?>, 
+                        events_source: 'models/obtener_eventos_alumno.php?id_user='+<?=$_SESSION['userid_sk']?>, 
 
                         // mostramos el calendario en el mes
                         view: 'month',             
