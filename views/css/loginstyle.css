@@ -44,12 +44,17 @@ a {
 }
 
 button {
-	border-radius: 20px;
-	border: 1px solid #ca0213;
-	background-color: #ca0213;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
+
+	background-image: url(./../assets/img/btnRojo.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: var(--black);
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    color:rgb(255, 255, 255);
+
 	padding: 12px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
