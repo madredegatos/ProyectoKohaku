@@ -15,15 +15,15 @@
             
             
             //+++Se modifica está linea ya que existia el campo en otra tabla
-            // $email=mainModel::clean_string($_POST['loginemail']);
-            // $pass=mainModel::clean_string($_POST['loginpass']);
+            $email=mainModel::clean_string($_POST['loginemail']);
+            $pass=mainModel::clean_string($_POST['loginpass']);
 
-            $correo=mainModel::clean_string($_POST['correo']);
-            $clave=mainModel::clean_string($_POST['clave']);
+            //$correo=mainModel::clean_string($_POST['correo']);
+            //$clave=mainModel::clean_string($_POST['clave']);
             
             //se encripta la contraseña
-            // $pass=mainModel::encryption($pass);
-            $clave=mainModel::encryption($clave);
+            $pass=mainModel::encryption($pass);
+            //$clave=mainModel::encryption($clave);
             //se pasan los datos del login a una variable para usarlos en el modelo
             $logindata=[
                 "email"=>$email,
