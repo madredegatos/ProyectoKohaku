@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="vendor/sweet-alert/sweetalert2.css">
     <!-- <link href="./views/css/kohaku.css" rel="stylesheet"> -->
      <!-- Se modifica el link con la variable SERVERURL"> -->
-    <link href="<?php echo SERVERURL; ?>./views/css/kohaku.css" rel="stylesheet">
-    <link href="<?php echo SERVERURL; ?>./views/css/calendar.css" rel="stylesheet">
+    <link href="<?php echo SERVERURL; ?>views/css/kohaku.css" rel="stylesheet">
+    <link href="<?php echo SERVERURL; ?>views/css/calendar.css" rel="stylesheet">
     <?php include "views/modules/script.php"; ?>
 </head>
 

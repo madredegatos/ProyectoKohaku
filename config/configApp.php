@@ -2,10 +2,6 @@
 //Conexión de la base de datos
     const SERVER="localhost";
     const DB="kohaku";
-    //Adriana
-    //const USER="root";
-    //const PASS="50430";
-    //Daniel
     const USER="usuario2026591"; 
     const PASS="usuario2026591";
 
