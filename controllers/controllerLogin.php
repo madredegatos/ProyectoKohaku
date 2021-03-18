@@ -9,55 +9,38 @@
     class controllerLogin extends modelLogin{
         // Funcion para iniciar sesion
 
-        public function start_controller_session(){
+        public function start_session_controller(){
             //se limpian los espacios que se piden en login por si traian partes de cadena anterior 
             //y luego se usa la nueva cadena en las variables
             
-            
-            //+++Se modifica está linea ya que existia el campo en otra tabla
-            // $email=mainModel::clean_string($_POST['loginemail']);
-            // $pass=mainModel::clean_string($_POST['loginpass']);
-
-            $correo=mainModel::clean_string($_POST['correo']);
-            $clave=mainModel::clean_string($_POST['clave']);
+            $email=mainModel::clean_string($_POST['loginemail']);
+            $pass=mainModel::clean_string($_POST['loginpass']);
             
             //se encripta la contraseña
-            // $pass=mainModel::encryption($pass);
-            $clave=mainModel::encryption($clave);
+            $pass=mainModel::encryption($pass);
             //se pasan los datos del login a una variable para usarlos en el modelo
             $logindata=[
-                // "email"=>$email,
-                // "pass"=>$pass
-                "Correo"=>$correo,
-                "Clave"=>$clave,
+                "email"=>$email,
+                "pass"=>$pass
             ];
             //se pasan los datos del login al modelo
-            $userdata=modelLogin::start_model_session($logindata);
+            $userdata=modelLogin::start_session_model($logindata);
+            $userdatarequest=modelLogin::start_session_count_model($logindata);
             
-            if($userdata->rowCount()==1){
-                $userrow=$userdata->fetch();
-                //SK= Sistema Kohaku
+            if($userdatarequest==1){
+                //if($userdata->rowCount()>0){
                 @session_start(['name'=>'SK']);
-                $_SESSION['usuario_sk']=$userrow['Usuario'];
-                $_SESSION['correo_sk']=$userrow['Correo'];
-                $_SESSION['tipo_sk']=$userrow['Tipo'];
-                $_SESSION['privilegio_sk']=$userrow['Privilegio'];
-                $_SESSION['token_sk']=md5(uniqid(mt_rand(),true));
-                $_SESSION['codigo_sk']=$userrow['Codigo'];
-                // $_SESSION['firstname_sk']=$userrow['nombre'];
-                // $_SESSION['lasttname_sk']=$userrow['apellido'];
-                // $_SESSION['email_sk']=$userrow['correo_electronico'];
-                // $_SESSION['usertype_sk']=$userrow['tipo_usuario_id_tipo_usuario'];
-                //$_SESSION['userid_sk']=$userrow['id_usuario'];
+                $_SESSION['firstname_sk']=$userdata['nombre'];
+                $_SESSION['lasttname_sk']=$userdata['apellido'];
+                $_SESSION['email_sk']=$userdata['correo_electronico'];
+                $_SESSION['usertype_sk']=$userdata['tipo_usuario_id_tipo_usuario'];
+                $_SESSION['userid_sk']=$userdata['id_usuario'];
 
-                //Se agrega este código para acceder a las vistasdependiendo el tipo de usuario
-                if($userrow['Tipo']=="Administrador"){
-                    $url=SERVERURL."admin";
-                }else{
-                    $url=SERVERURL."class";
-                }
+                //Se agrega este código para acceder a la vista del calendario
+                $url=SERVERURL."class";
                 
-                return '<script>window.location=" '.$url.'"</script>';//redireccionar el usuario
+                return $urlLocation ='<script> window.location=" '.$url.'"</script>';//redireccionar el usuario
+                
             } else{
                 $alert=[
                     "alert"=>"simple",
