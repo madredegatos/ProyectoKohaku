@@ -1,3 +1,24 @@
+<?php
+     @session_start(['name'=>'sk']);
+	if(isset($_POST['loginemail']) && isset($_POST['loginpass']) && $_POST['loginemail']!="" &&$_POST['loginpass']!="" ){
+		require_once "./controllers/controllerLogin.php";
+		$login = new controllerLogin();
+		//echo $login->start_session_controller();
+		header('Location: '.$login->start_session_controller());
+	}
+	elseif(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_confirm']) && $_POST['first_name']!="" && $_POST['last_name']!="" && $_POST['email']!="" && $_POST['pass']!="" && $_POST['pass_confirm']!="")
+	{
+		require_once "./controllers/controllerRegister.php";
+		$register = new controllerRegister();
+		echo $register->add_user_controller();
+	}
+	/*else{
+		require_once"./controllers/controllerLogin.php";
+		$login = new controllerLogin();
+		echo $login->close_session_controller();
+	}*/
+?>
+
 <!DOCTYPE html>
 <html lang="es" >
 <head>
@@ -47,8 +68,8 @@
 			</div>
 			<span>Puedes ingresar con tu cuenta</span>
             <!-- name="loginemail" name="loginpass" -->
-			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" />
-			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass"/>
+			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" value="wilson28@gmail.com" />
+			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass" value="55555" />
 		<a href="#">Olvidaste tu contraseña?</a>
 			<button type="submit" value="login">Ingresa</button>
 		</form>
@@ -69,24 +90,7 @@
 		</div>
 	</div>
 </div>
-<?php
-	if(isset($_POST['loginemail']) && isset($_POST['loginpass']) && $_POST['loginemail']!="" &&$_POST['loginpass']!="" ){
-		require_once "./controllers/controllerLogin.php";
-		$login = new controllerLogin();
-		echo $login->start_session_controller();
-	}
-	elseif(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_confirm']) && $_POST['first_name']!="" && $_POST['last_name']!="" && $_POST['email']!="" && $_POST['pass']!="" && $_POST['pass_confirm']!="")
-	{
-		require_once "./controllers/controllerRegister.php";
-		$register = new controllerRegister();
-		echo $register->add_user_controller();
-	}
-	/*else{
-		require_once"./controllers/controllerLogin.php";
-		$login = new controllerLogin();
-		echo $login->close_session_controller();
-	}*/
-?>
+
 <footer>
 	<p>
 		Created with <i class="fa fa-heart"></i> by
@@ -100,12 +104,5 @@
 
 </body>
 
-<!-- Se agrega este bloque de código para iniciar la sesión -->
-<?php 
-   /* if(isset($_POST['correo']) && isset($_POST['clave'])){
-        require_once "./controllers/controllerLogin.php";
-        $login = new ControllerLogin();
-        echo $login->start_controller_session();
-    }*/
-?>
+
 </html>

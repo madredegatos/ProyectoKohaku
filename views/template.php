@@ -49,7 +49,6 @@
             require_once "./controllers/controllerLogin.php";
 		    $login = new controllerLogin();
             @session_start(['name'=>'sk']); 
-            var_dump($_SESSION);
     ?>
     <!-- Page Wrapper -->
     <div id="wrapper">

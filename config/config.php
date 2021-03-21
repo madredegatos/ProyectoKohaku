@@ -1,6 +1,6 @@
 <?php
 
-include 'configApp.php';
+require_once 'configApp.php';
 try {
   // Nos conectamos a la base de datos
     $conexion = new mysqli(SERVER, USER, PASS, DB);	
