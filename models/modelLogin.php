@@ -22,11 +22,12 @@
             $statu=1;
             //comparcion de los datos recibidos en el login y los datos guardados en la base de datos
             $sql=mainModel::connect()->prepare("SELECT COUNT(*) total FROM usuario WHERE correo_electronico=:email AND clave=:pass AND estado_usuario_id_estado_usuario=:condition");
+            //$sql=mainModel::connect()->prepare("SELECT COUNT(*) total FROM usuario");
             $sql->bindParam(':email',$datos['email']);
             $sql->bindParam(':pass',$datos['pass']);
             $sql->bindParam(':condition',$statu);
-            $result=$sql->execute();
-
-            return $result;
+            $sql->execute();
+            //$result=$sql->fetch();
+            return $sql->fetch();
         }
     }

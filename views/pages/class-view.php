@@ -17,8 +17,10 @@
 		<!-- Area Chart -->
 		<div class="col-xl-8 col-lg-7">
 			<?php
-			  $tipo_usuario_administrador=1;
-			  $tipo_usuario_alumno=3;
+			if(isset($_SESSION['usertype_sk']))
+			{
+			  $tipo_usuario_administrador="1";
+			  $tipo_usuario_alumno="3";
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_alumno){
 			      include "views/modules/selecionarClasesAlumno.php";
 			     
@@ -26,6 +28,9 @@
 			  if( $_SESSION['usertype_sk']==$tipo_usuario_administrador){
 			     include "views/modules/agendarClasesAdministrador.php";
 			  }
+			}
+			else{ var_dump($_SESSION);
+			}
 			?>
 
 			

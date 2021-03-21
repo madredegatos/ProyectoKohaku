@@ -1,6 +1,6 @@
 <?php
-    session_start(['name'=>'SK']);
-
+    @session_name('SK');
+    @session_start();
     //Se valida si la sesión está iniciada si nó redireccione al login 
     if(!isset($_SESSION ['userid_sk'])){
         //redireccionamiento 

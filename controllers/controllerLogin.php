@@ -27,11 +27,12 @@
             $userdata=modelLogin::start_session_model($logindata);
             $userdatarequest=modelLogin::start_session_count_model($logindata);
             
-            if($userdatarequest==1){
-                //if($userdata->rowCount()>0){
-                @session_start(['name'=>'SK']);
+            if($userdatarequest['total']=="1"){
+            //if($userdata->rowCount()>0){
+			    
+                @session_start(['name'=>'sk']);
                 $_SESSION['firstname_sk']=$userdata['nombre'];
-                $_SESSION['lasttname_sk']=$userdata['apellido'];
+                $_SESSION['lastname_sk']=$userdata['apellido'];
                 $_SESSION['email_sk']=$userdata['correo_electronico'];
                 $_SESSION['usertype_sk']=$userdata['tipo_usuario_id_tipo_usuario'];
                 $_SESSION['userid_sk']=$userdata['id_usuario'];
@@ -41,11 +42,44 @@
                 
                 return $urlLocation ='<script> window.location=" '.$url.'"</script>';//redireccionar el usuario
                 
+
+               /* $alert=[
+                    "alert"=>"simple",
+                    "title"=>"ocurrió un error inesperado",
+                    //"text"=>"El nombre de usuario y contrseña no son correcto o su cuenta puede estar deshabilitada",
+                    "text"=>$userdatarequest['total']."<br>".$_SESSION['userid_sk']."<br>".$_SESSION['firstname_sk']."<br>".$_SESSION['lastname_sk'],
+                    "type"=>"error"
+                ];
+                return mainModel::sweet_alert($alert);
+*/
             } else{
                 $alert=[
                     "alert"=>"simple",
                     "title"=>"ocurrió un error inesperado",
-                    "text"=>"El nombre de usuario y contrseña no son correcto o su cuenta puede estar deshabilitada",
+                    //"text"=>"El nombre de usuario y contrseña no son correcto o su cuenta puede estar deshabilitada",
+                    "text"=>$userdatarequest['total']."<br>".$_SESSION['userid_sk'],
+                    "type"=>"error"
+                ];
+                return mainModel::sweet_alert($alert);
+            }
+        }
+        
+        public function close_session_controller(){
+			@session_name('SK');
+            @session_start();
+            if (isset($_SESSION['userid_sk'])){
+                unset($_SESSION['firstname_sk']);
+                unset($_SESSION['lasttname_sk']);
+                unset($_SESSION['email_sk']);
+                unset($_SESSION['usertype_sk']);
+                unset($_SESSION['userid_sk']);
+                @session_destroy();
+            }
+            else{
+                $alert=[
+                    "alert"=>"simple",
+                    "title"=>"ocurrió un error inesperado",
+                    "text"=>$_SESSION['userid_sk'],
                     "type"=>"error"
                 ];
                 return mainModel::sweet_alert($alert);

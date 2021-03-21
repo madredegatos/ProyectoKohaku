@@ -71,21 +71,21 @@
 </div>
 <?php
 	if(isset($_POST['loginemail']) && isset($_POST['loginpass']) && $_POST['loginemail']!="" &&$_POST['loginpass']!="" ){
-		require_once"./controllers/controllerLogin.php";
+		require_once "./controllers/controllerLogin.php";
 		$login = new controllerLogin();
 		echo $login->start_session_controller();
 	}
 	elseif(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_confirm']) && $_POST['first_name']!="" && $_POST['last_name']!="" && $_POST['email']!="" && $_POST['pass']!="" && $_POST['pass_confirm']!="")
 	{
-		require_once"./controllers/controllerRegister.php";
+		require_once "./controllers/controllerRegister.php";
 		$register = new controllerRegister();
 		echo $register->add_user_controller();
 	}
-	else{
-		require_once"./controllers/controllerRegister.php";
-		$registerFail = new controllerRegister();
-		echo $registerFail->add_user_incomplete_data();
-	}
+	/*else{
+		require_once"./controllers/controllerLogin.php";
+		$login = new controllerLogin();
+		echo $login->close_session_controller();
+	}*/
 ?>
 <footer>
 	<p>
