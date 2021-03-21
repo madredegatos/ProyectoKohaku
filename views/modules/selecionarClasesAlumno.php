@@ -17,7 +17,7 @@ $base_url='vendor/calendario/';
 
 
 
-    <link rel="stylesheet" type="text/css" href="<?=$base_url?>css/bootstrap.min.css">
+  
     <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
     <link href="<?=$base_url?>css/font-awesome.min.css" rel="stylesheet">
     <script type="text/javascript" src="<?=$base_url?>js/es-ES.js"></script>
