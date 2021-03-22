@@ -1,14 +1,14 @@
 <?php
-    session_start();
-
+    @session_name('SK');
+    @session_start();
     //Se valida si la sesión está iniciada si nó redireccione al login 
-    if(!isset($_SESSION ['id'])){
+    if(!isset($_SESSION ['userid_sk'])){
         //redireccionamiento 
         header ("Location: login.php");
     }
 
-    $name = $_SESSION['name'];
-    $tipo_usuario = $_SESSION['tipo_usuario'];
+    $name = $_SESSION['firstname_sk'];
+    $tipo_usuario = $_SESSION['usertype_sk'];
 ?>
 
 <!DOCTYPE html>
@@ -166,21 +166,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo SERVERURL; ?>vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo SERVERURL; ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?php echo SERVERURL; ?>vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="<?php echo SERVERURL; ?>views/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo SERVERURL; ?>vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?php echo SERVERURL; ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="<?php echo SERVERURL; ?>views/js/demo/datatables-demo.js"></script>
 
 </body>
 

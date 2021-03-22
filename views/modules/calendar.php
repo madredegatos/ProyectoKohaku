@@ -1,3 +1,30 @@
+<?php
+
+
+// Definimos nuestra zona horaria
+date_default_timezone_set("America/Santiago");
+
+// incluimos el archivo de funciones
+include 'util/funciones.php';
+
+// incluimos el archivo de configuracion
+include 'config/config.php';
+
+$base_url='vendor/calendario/';
+
+
+?>
+
+
+    <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
+    <link href="<?=$base_url?>css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="<?=$base_url?>js/es-ES.js"></script>
+    <script src="<?=$base_url?>js/jquery.min.js"></script>
+    <script src="<?=$base_url?>js/moment.js"></script>
+    <script src="<?=$base_url?>js/bootstrap.min.js"></script>
+    <script src="<?=$base_url?>js/bootstrap-datetimepicker.js"></script>
+    <link rel="stylesheet" href="<?=$base_url?>css/bootstrap-datetimepicker.min.css" />
+
 <div class="card shadow mb-4 ">
     <!-- Card Header - Dropdown -->
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
