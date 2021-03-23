@@ -1,4 +1,6 @@
-<?php require_once '../modules/Roles.php' ?>
+<?php 
+require_once './models/Roles.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
 		<h2>Listar</h2>
 	</header>
 
-	<a href="ingresar.php">Ingresar nuevo</a>
+	<a href="./views/modules/ingresar.php">Ingresar nuevo</a>
 
 	<table>
 		<tr>
@@ -21,7 +23,7 @@
 		<?php foreach (RolesDAO::listarDatos() as $fila) { ?>
 			<tr>
 				<td><?= $fila[1] ?></td>
-				<td><a href="editar.php?id_usuario=<?=$fila[0]?>">Editar</a></td>
+				<td><a href="./views/modules/editar.php?id_usuario=<?=$fila[0]?>">Editar</a></td>
 				<td><a href="../controllers/Roles.controlador.php?a=elim&id_usuario=<?=$fila[0]?>" onclick="return confirm('¿Desea eliminar?')">Eliminar</a></td>
 			</tr>
 		<?php } ?>

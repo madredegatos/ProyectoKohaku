@@ -4,7 +4,7 @@
 		require_once "./controllers/controllerLogin.php";
 		$login = new controllerLogin();
 		$url =  $login->start_session_controller();
-		header('Location:' .  $url );
+		header('Location: ' .  $url );
 		echo $url;
 		var_dump($_SESSION);
 	}

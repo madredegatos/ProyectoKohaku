@@ -1,7 +1,7 @@
-<?php
-	require_once '../modules/Roles.php';
-
-	$rol = RolesDAO::buscarPorId($_GET['id_usuario']);
+<?php 
+	require_once './models/Roles.php';
+	$roles = new RolesDAO();
+	$rol = $roles->buscarPorId($_GET['id_usuario']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
