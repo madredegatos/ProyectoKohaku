@@ -4,7 +4,7 @@
 		require_once "./controllers/controllerLogin.php";
 		$login = new controllerLogin();
 		$url =  $login->start_session_controller();
-		header('Location:' .  $url );
+		header('Location:' . $url );
 		echo $url;
 		var_dump($_SESSION);
 	}
@@ -70,7 +70,7 @@
 			</div>
 			<span>Puedes ingresar con tu cuenta</span>
             <!-- name="loginemail" name="loginpass" -->
-			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" value="wuilson28@gmail.com" />
+			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" value="wilson28@gmail.com" />
 			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass" value="55555" />
 		<a href="#">Olvidaste tu contraseña?</a>
 			<button type="submit" value="login">Ingresa</button>

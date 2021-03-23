@@ -38,7 +38,7 @@
                 $_SESSION['userid_sk']=$userdata['id_usuario'];
 
                 //Se agrega este código para acceder a la vista del calendario
-                $url=SERVER_RELATIVE_URL."userupdate";
+                $url=SERVER_RELATIVE_URL."user";
                 
                
                 return $url;

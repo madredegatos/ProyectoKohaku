@@ -3,9 +3,8 @@
 	if(isset($_POST['loginemail']) && isset($_POST['loginpass']) && $_POST['loginemail']!="" &&$_POST['loginpass']!="" ){
 		require_once "./controllers/controllerLogin.php";
 		$login = new controllerLogin();
-		$url =  $login->start_session_controller();
-		header('Location:' .  $url );
-		echo $url;
+		 $login->start_session_controller();
+		header('Location:'.$login->start_session_controller());
 		var_dump($_SESSION);
 	}
 	elseif(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_confirm']) && $_POST['first_name']!="" && $_POST['last_name']!="" && $_POST['email']!="" && $_POST['pass']!="" && $_POST['pass_confirm']!="")
@@ -70,7 +69,7 @@
 			</div>
 			<span>Puedes ingresar con tu cuenta</span>
             <!-- name="loginemail" name="loginpass" -->
-			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" value="wuilson28@gmail.com" />
+			<input type="email" placeholder="Correo electronico" id="loginemail" name="loginemail" value="wilson28@gmail.com" />
 			<input type="password" placeholder="Contraseña" id="loginpass" name="loginpass" value="55555" />
 		<a href="#">Olvidaste tu contraseña?</a>
 			<button type="submit" value="login">Ingresa</button>

@@ -11,5 +11,3 @@
     const METHOD = "AES-256-CBC";
 	const SECRET_KEY ='$SISKHK@2021';
 	const SECRET_IV = '2026591';
-
- 

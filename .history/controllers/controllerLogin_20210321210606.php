@@ -29,7 +29,7 @@
             
             if($userdatarequest['total']=="1"){
             //if($userdata->rowCount()>0){
-			    
+                @session_start(['name'=>'sk']);    
                 
                 $_SESSION['firstname_sk']=$userdata['nombre'];
                 $_SESSION['lastname_sk']=$userdata['apellido'];
@@ -38,7 +38,7 @@
                 $_SESSION['userid_sk']=$userdata['id_usuario'];
 
                 //Se agrega este código para acceder a la vista del calendario
-                $url=SERVER_RELATIVE_URL."userupdate";
+                $url=SERVER_RELATIVE_URL."class";
                 
                
                 return $url;

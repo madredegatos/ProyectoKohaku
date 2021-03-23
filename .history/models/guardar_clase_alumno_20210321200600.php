@@ -15,7 +15,7 @@ if(isset($_POST) )
  
     
     // Ejecutamos nuestra sentencia sql
-    $conexion->query($query)or die('<script type="text/javascript">alert("No se pudo agregar la clase ")</script>');
+    $conexion->query($query)or die('<script type="text/javascript">alert("No se pudo agragar la clase ")</script>');
     
    
 }

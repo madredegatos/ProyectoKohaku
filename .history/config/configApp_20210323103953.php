@@ -12,4 +12,15 @@
 	const SECRET_KEY ='$SISKHK@2021';
 	const SECRET_IV = '2026591';
 
- 
+    public function ejecutarConsulta ($sql) {
+		$contenedor = $this->conexion->query($sql);
+		return $contenedor->fetch_all();
+	}
+
+	public function ejecutarActualizacion ($sql) {
+		$this->conexion->query($sql);
+	}
+
+	public function cerrarConexion () {
+		$this->conexion->close();
+	}
