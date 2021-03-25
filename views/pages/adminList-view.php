@@ -11,18 +11,13 @@
 		<div class="container-fluid">
 			<ul class="breadcrumb breadcrumb-tabs">
 			  	<li>
-			  		<a href="admin.html" class="btn btn-info">
-			  			<i class="zmdi zmdi-plus"></i> &nbsp; NUEVO ADMINISTRADOR
-			  		</a>
-			  	</li>
-			  	<li>
 			  		<a href="admin-list.html" class="btn btn-success">
-			  			<i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE ADMINISTRADORES
+			  			<i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE ALUMNOS
 			  		</a>
 			  	</li>
 			  	<li>
 			  		<a href="admin-search.html" class="btn btn-primary">
-			  			<i class="zmdi zmdi-search"></i> &nbsp; BUSCAR ADMINISTRADOR
+			  			<i class="zmdi zmdi-search"></i> &nbsp; BUSCAR ALUMNO
 			  		</a>
 			  	</li>
 			</ul>
@@ -49,7 +44,7 @@
 									<th class="text-center">ELIMINAR</th>
 								</tr>
 							</thead>
-							<tbody>
+							<!--<tbody>
 								<tr>
 									<td>1</td>
 									<td>7890987651</td>
@@ -98,10 +93,10 @@
 										</form>
 									</td>
 								</tr>
-							</tbody>
+							</tbody>-->
 						</table>
 					</div>
-					<nav class="text-center">
+					<!--<nav class="text-center">
 						<ul class="pagination pagination-sm">
 							<li class="disabled"><a href="javascript:void(0)">«</a></li>
 							<li class="active"><a href="javascript:void(0)">1</a></li>
@@ -111,7 +106,7 @@
 							<li><a href="javascript:void(0)">5</a></li>
 							<li><a href="javascript:void(0)">»</a></li>
 						</ul>
-					</nav>
+					</nav>-->
 				</div>
 			</div>
 		</div>

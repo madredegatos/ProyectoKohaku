@@ -18,7 +18,8 @@
 
 
     <!-- Nav Item - Tables -->
-
+    
+    <label><?php echo $_SESSION['firstname_sk']; ?></label>
     <li class="nav-item">
         <a class="nav-link" href="index.php">
             <i class="fas fa-house-user"></i>
@@ -26,14 +27,14 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="/kohaku/?page=admin">
+        <a class="nav-link" href="/ProyectoKohaku/userupdate">
             <i class="fas fa-house-user"></i>
             <span>Administrador</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="/kohaku/?page=class">
+        <a class="nav-link" href="/ProyectoKohaku/class">
             <i class="far fa-calendar-alt"></i>
             <span> Clases</span></a>
            
@@ -48,7 +49,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="404.php">
+        <a class="nav-link" href="/ProyectoKohaku/adminList">
             <i class="fas fa-tasks"></i>
             <span>Progreso</span></a>
     </li>

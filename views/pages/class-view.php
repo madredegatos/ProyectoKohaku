@@ -29,8 +29,6 @@
 			     include "views/modules/agendarClasesAdministrador.php";
 			  }
 			}
-			else{ var_dump($_SESSION);
-			}
 			?>
 
 			

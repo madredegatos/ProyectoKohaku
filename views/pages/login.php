@@ -6,7 +6,7 @@
 		$url =  $login->start_session_controller();
 		header('Location: ' .  $url );
 		echo $url;
-		var_dump($_SESSION);
+		//var_dump($_SESSION);
 	}
 	elseif(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_confirm']) && $_POST['first_name']!="" && $_POST['last_name']!="" && $_POST['email']!="" && $_POST['pass']!="" && $_POST['pass_confirm']!="")
 	{
@@ -14,11 +14,11 @@
 		$register = new controllerRegister();
 		echo $register->add_user_controller();
 	}
-	/*else{
+	else{
 		require_once"./controllers/controllerLogin.php";
 		$login = new controllerLogin();
 		echo $login->close_session_controller();
-	}*/
+	}
 ?>
 
 <!DOCTYPE html>

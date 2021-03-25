@@ -75,7 +75,7 @@
                 unset($_SESSION['userid_sk']);
                 @session_destroy();
             }
-            else{
+            /*else{
                 $alert=[
                     "alert"=>"simple",
                     "title"=>"ocurrió un error inesperado",
@@ -83,7 +83,7 @@
                     "type"=>"error"
                 ];
                 return mainModel::sweet_alert($alert);
-            }
+            }*/
         }
         
     }

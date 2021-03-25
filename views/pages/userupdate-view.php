@@ -29,8 +29,6 @@
 			     include "views/modules/PAGINA NUEVA CAMBIAR ADMIN.php";
 			  }
 			}
-			else{ var_dump($_SESSION);
-			}
 			?>
 
 			
